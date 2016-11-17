@@ -14,7 +14,7 @@
     "suggested": "512mb",
     "required": "512mb"
   },
-  "distro": "ubuntu-14-04-x64",
+  "distro": "ubuntu-16-04-x64",
   "description": "StrongSwan VPN using IKEv2",
   "keywords": ["fodor", "strongswan", "vpn"],
   "homepage": "https://github.com/fodorxyz/ikev2-vpn",

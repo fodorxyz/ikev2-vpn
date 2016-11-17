@@ -1,3 +1,11 @@
+# Setup on Mac
+
+# Setup on iOS
+
+# Setup on Android
+
+
+
 # Add more accounts
 
 Instructions here - we will create a bin script so it's easy
