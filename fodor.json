@@ -3,7 +3,6 @@
   "installpath": "/var/fodorxyz/ikev2-vpn/",
   "provisioner": "provisioning/start",
   "text": {
-    "complete": "User/Pass: fodor/fodor :)"
   },
   "links": [
     {
