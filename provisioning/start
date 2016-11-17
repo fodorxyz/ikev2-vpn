@@ -6,7 +6,7 @@
 export VPNIPPOOL="10.20.30.0/24"
 
 # Required packages
-
+apt-get update # This has already been done by Fodor, but it's not liking it for some reason
 apt-get -y install strongswan strongswan-plugin-openssl strongswan-plugin-eap-mschapv2 iptables-persistent unattended-upgrades
 
 # StrongSwan
