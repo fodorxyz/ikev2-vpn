@@ -8,3 +8,4 @@ fi
 
 echo -e "${1} %any : EAP \""${2}"\"\n" >> /etc/ipsec.secrets
 ipsec rereadsecrets
+echo "Added ${1} to VPN"
