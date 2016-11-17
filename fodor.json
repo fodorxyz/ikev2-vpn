@@ -23,7 +23,7 @@
     {
         "title": "VPN Shared Secret",
         "name": "vpnsecret",
-        "notes": "This should be different to the VPN User's Password"
+        "notes": "This should be different to the VPN User's Password",
         "type": "string"
     },
     {
