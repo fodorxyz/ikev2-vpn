@@ -1,3 +1,8 @@
+# Add more users
+
+* `ssh root@{{domain}}`
+* `/var/fodorxyz/ikev2-vpn/adduser username password`
+
 # Setup on Mac
 
 The easiest way to set this up on Mac is to download, then open, the mobile config profile: https://cloud.ashleyhindle.com/ikev2-vpn/

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 2 ]; then
+    echo "Not enough arguments provided"
+    echo "Usage: ${0} username password"
+    exit 1
+fi
+
+echo -e "${VPNUSERNAME} %any : EAP \""${VPNPASSWORD}"\"\n" >> /etc/ipsec.secrets
+ipsec rereadsecrets

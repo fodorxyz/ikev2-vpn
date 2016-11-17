@@ -71,9 +71,8 @@ sysctl -p
 # VPN Users & Passwords
 rm /etc/ipsec.secrets
 
-echo "${DOMAIN} : PSK \"${VPNSECRET}\"
-${VPNUSERNAME} %any : EAP \""${VPNPASSWORD}"\"
-" > /etc/ipsec.secrets
+echo "${DOMAIN} : PSK \"${VPNSECRET}\"" > /etc/ipsec.secrets
+/usr/bin/env bash ${INSTALLPATH}/bin/adduser "${VPNUSERNAME}" "${VPNPASSWORD}"
 
 ipsec restart
 
