@@ -1,4 +1,8 @@
 <?php
+if (isset($_GET['vs'])) {
+    highlight_file(__FILE__);
+    exit;
+}
 $template = file_get_contents('configs/ikev2.mobileconfig');
 
 $requiredGet = [
@@ -32,6 +36,7 @@ $provided = array_keys($_POST);
 if (!empty(array_diff($requiredPost, $provided))) {
     echo <<<FORM
     <p>This server has access logs turned off and this page does no logging of its own</p>
+    <p><a href="?domain={$domain}&vpnUsername={$vpnUsername}&vs">View Source</a></p>
 <form action="?domain={$domain}&vpnUsername={$vpnUsername}" method="POST">
     <label>Domain</label><br />
     <input name='domain' value='{$domain}'><br />
