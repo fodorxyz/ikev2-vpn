@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cd /var/fodorxyz/ikev2-vpn
+git pull origin master
+ipsec restart

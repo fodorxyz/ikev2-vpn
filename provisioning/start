@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+# TODO: Ownership of /etc/ipsec.secrets?
+# TODO: Don't use Google VPN - is there a better alternative?
+# TODO: Close root SSH access and add another user
+
+export VPNIPPOOL="10.20.30.0/24"
+
+# Required packages
+
+apt-get -y install strongswan strongswan-plugin-openssl strongswan-plugin-eap-mschapv2 iptables-persistent unattended-upgrades
+
+# StrongSwan
+rm /etc/strongswan.conf
+ln -s "${INSTALLPATH}/configs/strongswan.conf" /etc/strongswan.conf
+
+# IPSec - has replacements so can't symlink it
+rm /etc/ipsec.conf
+cat > /etc/ipsec.conf <<EOF
+config setup
+  strictcrlpolicy=yes
+  uniqueids=no
+
+conn %default
+  auto=add
+  compress=no
+  type=tunnel
+  keyexchange=ikev2
+  fragmentation=yes
+  forceencaps=yes
+  ike=aes256-sha1-modp1024,3des-sha1-modp1024!
+  esp=aes256-sha1,3des-sha1!
+  dpdaction=clear
+  dpddelay=200s
+  rekey=no
+  left=%any
+  leftid=@${VPNHOST}
+  leftcert=${VPNCRTFILE}
+  leftsendcert=always
+  leftsubnet=0.0.0.0/0
+  right=%any
+  rightid=%any
+  rightauth=eap-mschapv2
+  eap_identity=%any
+  rightdns=8.8.8.8,8.8.4.4
+  rightsourceip=${VPNIPPOOL}
+  rightsendcert=never
+EOF
+
+
+# Persistent IPTables
+/usr/bin/env bash iptables
+
+# Required VPN changes
+echo '
+net.ipv4.ip_forward = 1
+net.ipv4.ip_no_pmtu_disc = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+' >> /etc/sysctl.conf
+
+sysctl -p
+
+# VPN Users & Passwords
+rm /etc/ipsec.secrets
+include /var/lib/strongswan/ipsec.secrets.inc
+
+# logins
+ : PSK "SEXapPAm5x5OXktAzes9nxE3NvilpmIH1orpE2cIzgfWRZgQDYZ1Wm3thlfXXwn"
+myusername : EAP "hSyeI1H8Wsybb5qDk5abBrJ7LCu3bPbJrax9aFG77FiiJZu3eUepLwvg9pjjEL3
+
+echo "${$DOMAIN} : RSA \"${VPNKEYFILE}\"
+${VPNUSERNAME} %any : EAP \""${VPNPASSWORD}"\"
+" > /etc/ipsec.secrets
+
+ipsec restart
+
+# Unattended upgrades
+/usr/bin/env bash unattended-upgrades

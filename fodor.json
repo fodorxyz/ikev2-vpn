@@ -1,0 +1,63 @@
+{
+  "name": "fodorxyz/ikev2-vpn",
+  "installpath": "/var/fodorxyz/ikev2-vpn/",
+  "provisioner": "provisioning/start",
+  "text": {
+    "complete": "User/Pass: fodor/fodor :)"
+  },
+  "links": [
+    {
+      "title": "Documentation",
+      "url": "https://github.com/fodorxyz/ikev2-vpn/INSTALLED.md"
+    }
+  ],
+  "size": {
+    "suggested": "512mb",
+    "required": "512mb"
+  },
+  "distro": "ubuntu-14-04-x64",
+  "description": "StrongSwan VPN using IKEv2",
+  "keywords": ["fodor", "strongswan", "vpn"],
+  "homepage": "https://github.com/fodorxyz/ikev2-vpn",
+  "inputs": [
+    {
+        "title": "API Key",
+        "name": "apikey",
+        "placeholder": "xxxx-xxxx-xxxx-xxxx",
+        "type": "regex",
+        "regex": "[a-zA-Z\\-0-9]+"
+    },
+    {
+        "title": "Server Type",
+        "name": "type",
+        "type": "select",
+        "options": ["nginx", "apache", "iis", "lighttpd"]
+    },
+    {
+        "title": "Name",
+        "name": "name",
+        "type": "string"
+    },
+    {
+        "title": "Email",
+        "name": "email",
+        "type": "email"
+    },
+    {
+        "title": "Password",
+        "name": "password",
+        "notes": "Must be more than 8 characters",
+        "type": "password"
+    },
+    {
+        "title": "URL",
+        "name": "url",
+        "type": "url"
+    },
+    {
+        "title": "Age",
+        "name": "age",
+        "type": "number"
+    }
+  ]
+}
