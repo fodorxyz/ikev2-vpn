@@ -13,7 +13,7 @@ Then go to `System Preferences` -> `Network` -> and click the `Fodor IKEv2` conn
 
 The easiest way to set this up on iOS is to download and install the mobile config profile: https://cloud.ashleyhindle.com/ikev2-vpn/
 
-After it's installed go to `Settings` -> `VPN` then choose `Fodor IKEv2` and turn the VPN on with the slider
+After it's installed go to `Settings` -> `General` -> `VPN` then choose `Fodor IKEv2` and turn the VPN on with the slider
 
 # Setup on Ubuntu
 

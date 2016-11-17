@@ -53,6 +53,8 @@ FORM;
     exit;
 }
 
+$domain = $_POST['domain'];
+$vpnUsername = $_POST['vpnUsername'];
 $vpnSecret = $_POST['vpnSecret'];
 $vpnPassword = $_POST['vpnPassword'];
 
