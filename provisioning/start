@@ -48,7 +48,7 @@ EOF
 
 
 # Persistent IPTables
-/usr/bin/env bash iptables
+/usr/bin/env bash "${INSTALLPATH}/provisioning/iptables"
 
 # Required VPN changes
 echo '
