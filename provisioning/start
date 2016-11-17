@@ -63,13 +63,8 @@ sysctl -p
 
 # VPN Users & Passwords
 rm /etc/ipsec.secrets
-include /var/lib/strongswan/ipsec.secrets.inc
 
-# logins
- : PSK "SEXapPAm5x5OXktAzes9nxE3NvilpmIH1orpE2cIzgfWRZgQDYZ1Wm3thlfXXwn"
-myusername : EAP "hSyeI1H8Wsybb5qDk5abBrJ7LCu3bPbJrax9aFG77FiiJZu3eUepLwvg9pjjEL3
-
-echo "${$DOMAIN} : RSA \"${VPNKEYFILE}\"
+echo "${$DOMAIN} : PSK \"${VPNSECRET}\"
 ${VPNUSERNAME} %any : EAP \""${VPNPASSWORD}"\"
 " > /etc/ipsec.secrets
 

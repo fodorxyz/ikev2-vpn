@@ -21,43 +21,20 @@
   "homepage": "https://github.com/fodorxyz/ikev2-vpn",
   "inputs": [
     {
-        "title": "API Key",
-        "name": "apikey",
-        "placeholder": "xxxx-xxxx-xxxx-xxxx",
-        "type": "regex",
-        "regex": "[a-zA-Z\\-0-9]+"
-    },
-    {
-        "title": "Server Type",
-        "name": "type",
-        "type": "select",
-        "options": ["nginx", "apache", "iis", "lighttpd"]
-    },
-    {
-        "title": "Name",
-        "name": "name",
+        "title": "VPN Shared Secret",
+        "name": "vpnsecret",
+        "notes": "This should be different to the VPN User's Password"
         "type": "string"
     },
     {
-        "title": "Email",
-        "name": "email",
-        "type": "email"
+        "title": "VPN Username",
+        "name": "vpnusername",
+        "type": "string"
     },
     {
-        "title": "Password",
-        "name": "password",
-        "notes": "Must be more than 8 characters",
+        "title": "VPN Password",
+        "name": "vpnpassword",
         "type": "password"
-    },
-    {
-        "title": "URL",
-        "name": "url",
-        "type": "url"
-    },
-    {
-        "title": "Age",
-        "name": "age",
-        "type": "number"
     }
   ]
 }
