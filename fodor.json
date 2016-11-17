@@ -10,8 +10,8 @@
       "url": "https://github.com/fodorxyz/ikev2-vpn/blob/master/INSTALLED.md"
     },
     {
-      "title": "Download iOS VPN Profile",
-      "url": "http://{{DOMAIN}}/{{VPNUSERNAME}}.mobileconfig"
+      "title": "Download iOS VPN Profile (from Safari on iDevice)",
+      "url": "http://{{DOMAIN}}/putUsernameHere.mobileconfig"
     }
   ],
   "size": {
