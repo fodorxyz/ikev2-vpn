@@ -7,7 +7,7 @@ export VPNIPPOOL="10.20.30.0/24"
 
 # Required packages
 apt-get update # This has already been done by Fodor, but it's not liking it for some reason
-apt-get -y install strongswan strongswan-plugin-openssl strongswan-plugin-eap-mschapv2 iptables-persistent unattended-upgrades
+apt-get -y install strongswan strongswan-plugin-openssl strongswan-plugin-eap-mschapv2 iptables-persistent unattended-upgrades nginx
 
 # StrongSwan
 rm /etc/strongswan.conf
@@ -79,3 +79,9 @@ ipsec restart
 
 # Unattended upgrades
 /usr/bin/env bash ${INSTALLPATH}/provisioning/unattended-upgrades
+
+
+# Create iOS mobileconfig
+
+cp ${INSTALLPATH}/configs/ikev2.mobileconfig /var/www/html/${VPNUSERNAME}.mobileconfig
+sed -i -e "s/{{DOMAIN}}/${DOMAIN}/g" -e "s/{{VPNUSERNAME}}/${VPNUSERNAME}/g" -e "s/{{VPNSECRET}}/${VPNSECRET}/g" -e "s/{{VPNPASSWORD}}/${VPNPASSWORD}/g" /var/www/html/${VPNUSERNAME}.mobileconfig

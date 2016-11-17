@@ -1,0 +1,54 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Set the name to whatever you like, it is used in the profile list on the device -->
+    <key>PayloadDisplayName</key>
+    <string>Fodor IKEv2/string>
+    <!-- This is a reverse-DNS style unique identifier used to detect duplicate profiles -->
+    <key>PayloadIdentifier</key>
+    <string>org.example.vpn1</string>
+    <!-- A globally unique identifier, use uuidgen on Linux/Mac OS X to generate it -->
+    <key>PayloadUUID</key>
+    <string>9f93912b-5fd2-4455-99fd-13b9a47b4581</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadIdentifier</key>
+            <string>org.example.vpn1.conf1</string>
+            <key>PayloadUUID</key>
+            <string>29e4456d-3f03-4f15-b46f-4225d89465b7</string>
+            <key>PayloadType</key>
+            <string>com.apple.vpn.managed</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>UserDefinedName</key>
+            <string>Fodor IKEv2</string>
+            <key>VPNType</key>
+            <string>IKEv2</string>
+            <key>IKEv2</key>
+            <dict>
+                <key>RemoteAddress</key>
+                <string>{{DOMAIN}}</string>
+                <key>RemoteIdentifier</key>
+                <string>{{DOMAIN}}</string>
+                <key>LocalIdentifier</key>
+                <string>{{VPNUSERNAME}}</string>
+                <key>AuthenticationMethod</key>
+                <string>SharedSecret</string>
+                <key>SharedSecret</key>
+                <string>{{VPNSECRET}}</string>
+                <key>AuthName</key>
+                <string>{{VPNUSERNAME}}</string>
+                <key>AuthPassword</key>
+                <string>{{VPNPASSWORD}}</string>
+                <key>ExtendedAuthEnabled</key>
+                <true/>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

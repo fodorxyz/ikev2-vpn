@@ -6,8 +6,12 @@
   },
   "links": [
     {
-      "title": "Documentation",
-      "url": "https://github.com/fodorxyz/ikev2-vpn/INSTALLED.md"
+      "title": "Getting Your Devices Setup",
+      "url": "https://github.com/fodorxyz/ikev2-vpn/blob/master/INSTALLED.md"
+    },
+    {
+      "title": "Download iOS VPN Profile",
+      "url": "http://{{DOMAIN}}/{{VPNUSERNAME}}.mobileconfig"
     }
   ],
   "size": {
