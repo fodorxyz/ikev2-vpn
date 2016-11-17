@@ -21,7 +21,7 @@ if (!empty(array_diff($requiredGet, $provided))) {
     <form action="" method="GET">
     <label>Domain</label><br />
     <input name='domain' value='{$domain}'><br />
-    <label>vpnUsername</label><br />
+    <label>VPN Username</label><br />
     <input name='vpnUsername' value=''><br />
     <input type="submit"/>
 FORM;
@@ -35,9 +35,9 @@ if (!empty(array_diff($requiredPost, $provided))) {
 <form action="?domain={$domain}&vpnUsername={$vpnUsername}" method="POST">
     <label>Domain</label><br />
     <input name='domain' value='{$domain}'><br />
-    <label>vpnUsername</label><br />
+    <label>VPN Username</label><br />
     <input name='vpnUsername' value='{$vpnUsername}'><br />
-    <label>Vpn Secret</label><br />
+    <label>VPN Secret</label><br />
     <input name='vpnSecret' type='password' value=''><br />
     <label>VPN Password</label><br />
     <input name='vpnPassword' type='password' value=''><br />
