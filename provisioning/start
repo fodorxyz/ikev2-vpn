@@ -21,6 +21,13 @@ config setup
   uniqueids=no
 
 conn %default
+ mobike=yes
+ dpdaction=clear
+ dpddelay=35s
+ dpdtimeout=200s
+ fragmentation=yes
+
+conn IKEV2
   auto=add
   compress=no
   type=tunnel
@@ -33,7 +40,7 @@ conn %default
   dpddelay=200s
   rekey=no
   left=%any
-  leftid=@${VPNHOST}
+  leftid=${DOMAIN}
   leftauth=psk
   leftsendcert=always
   leftsubnet=0.0.0.0/0
@@ -42,13 +49,10 @@ conn %default
   rightauth=eap-mschapv2
   eap_identity=%any
   rightdns=8.8.8.8,8.8.4.4
+  rightsubnet=${VPNIPPOOL}
   rightsourceip=${VPNIPPOOL}
   rightsendcert=never
 EOF
-
-
-# Persistent IPTables
-/usr/bin/env bash "${INSTALLPATH}/provisioning/iptables"
 
 # Required VPN changes
 echo '
@@ -61,6 +65,9 @@ net.ipv4.conf.all.send_redirects = 0
 
 sysctl -p
 
+# Persistent IPTables
+/usr/bin/env bash "${INSTALLPATH}/provisioning/iptables"
+
 # VPN Users & Passwords
 rm /etc/ipsec.secrets
 
@@ -71,4 +78,4 @@ ${VPNUSERNAME} %any : EAP \""${VPNPASSWORD}"\"
 ipsec restart
 
 # Unattended upgrades
-/usr/bin/env bash unattended-upgrades
+/usr/bin/env bash ${INSTALLPATH}/provisioning/unattended-upgrades
