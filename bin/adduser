@@ -6,5 +6,5 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-echo -e "${VPNUSERNAME} %any : EAP \""${VPNPASSWORD}"\"\n" >> /etc/ipsec.secrets
+echo -e "${1} %any : EAP \""${2}"\"\n" >> /etc/ipsec.secrets
 ipsec rereadsecrets
