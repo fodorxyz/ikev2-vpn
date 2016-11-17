@@ -34,7 +34,7 @@ conn %default
   rekey=no
   left=%any
   leftid=@${VPNHOST}
-  leftcert=${VPNCRTFILE}
+  leftauth=psk
   leftsendcert=always
   leftsubnet=0.0.0.0/0
   right=%any
