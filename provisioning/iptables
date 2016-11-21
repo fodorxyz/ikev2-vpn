@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-iptables -F
-
-iptables -t nat -A POSTROUTING -s $VPNIPPOOL -o eth0 -m policy --pol ipsec --dir out -j ACCEPT  # exempt IPsec traffic from masquerading
+iptables -F # Flush
+iptables -t nat -A POSTROUTING -s $VPNIPPOOL -o eth0 -m policy --pol ipsec --dir out -j ACCEPT
 iptables -t nat -A POSTROUTING -s $VPNIPPOOL -o eth0 -j MASQUERADE

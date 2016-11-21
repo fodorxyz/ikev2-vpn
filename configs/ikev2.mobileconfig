@@ -47,6 +47,8 @@
                 <string>{{VPNPASSWORD}}</string>
                 <key>ExtendedAuthEnabled</key>
                 <true/>
+                <key>OnDemandEnabled</key>
+                <integer>1</integer>
             </dict>
         </dict>
     </array>

@@ -55,6 +55,9 @@ conn IKEV2
   rightsendcert=never
 EOF
 
+sed -i -e 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+service ssh restart
+
 # Required VPN changes
 echo '
 net.ipv4.ip_forward = 1
