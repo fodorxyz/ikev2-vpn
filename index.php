@@ -4,7 +4,7 @@ if (isset($_GET['vs'])) {
     exit;
 }
 $template = file_get_contents('configs/ikev2.mobileconfig');
-$uuidReplacement = '{{UID}}';
+$uuidReplacement = '{{UUID}}';
 $uuidsToReplace = substr_count($template, $uuidReplacement);
 
 for ($i = 0; $i < $uuidsToReplace; $i++) {
