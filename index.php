@@ -9,7 +9,7 @@ $uuidsToReplace = substr_count($template, $uuidReplacement);
 
 for ($i = 0; $i < $uuidsToReplace; $i++) {
     $uuid = guidv4(openssl_random_pseudo_bytes(16));
-    $template = str_replace($uuidReplacement, $uuid, $template);
+    $template = preg_replace('/'.$uuidReplacement.'/', $uuid, $template, 1);
 }
 
 $requiredGet = [
