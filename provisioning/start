@@ -17,7 +17,6 @@ ln -s "${INSTALLPATH}/configs/strongswan.conf" /etc/strongswan.conf
 rm /etc/ipsec.conf
 cat > /etc/ipsec.conf <<EOF
 config setup
-  strictcrlpolicy=yes
   uniqueids=no
   charondebug=dmn -1, mgr -1, ike -1, chd -1, job -1, cfg -1, knl -1, net -1, asn -1, enc -1, lib -1, esp -1, tls -1, tnc -1, imc -1, imv -1, pts -1
 
