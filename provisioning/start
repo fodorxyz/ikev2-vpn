@@ -40,7 +40,7 @@ conn IKEV2
   dpddelay=200s
   rekey=no
   left=%any
-  leftid=${DOMAIN}
+  leftid=@${DOMAIN}
   leftauth=psk
   leftsendcert=always
   leftsubnet=0.0.0.0/0
