@@ -2,4 +2,6 @@
 
 cd /var/fodorxyz/ikev2-vpn
 git pull origin master
+rm /etc/ipsec.conf
+cp /var/fodorxyz/ikev2-vpn//configs/strongswan.conf /etc/strongswan.conf
 ipsec restart
