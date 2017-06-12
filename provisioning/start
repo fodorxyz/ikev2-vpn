@@ -77,6 +77,10 @@ rm /etc/ipsec.secrets
 echo "${DOMAIN} : PSK \"${VPNSECRET}\"" > /etc/ipsec.secrets
 /usr/bin/env bash ${INSTALLPATH}/bin/adduser "${VPNUSERNAME}" "${VPNPASSWORD}"
 
+# Disable apparmor for charon
+ln -s /etc/apparmor.d/usr.lib.ipsec.charon /etc/apparmor.d/disable/
+apparmor_parser -R /etc/apparmor.d/usr.lib.ipsec.charon
+
 ipsec restart
 
 # Unattended upgrades
