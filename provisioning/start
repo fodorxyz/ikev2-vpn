@@ -11,7 +11,7 @@ apt-get -y install strongswan strongswan-plugin-openssl strongswan-plugin-eap-ms
 
 # StrongSwan
 rm /etc/strongswan.conf
-ln -s "${INSTALLPATH}/configs/strongswan.conf" /etc/strongswan.conf
+cp "${INSTALLPATH}/configs/strongswan.conf" /etc/strongswan.conf
 
 # IPSec - has replacements so can't symlink it
 rm /etc/ipsec.conf
