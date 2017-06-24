@@ -16,14 +16,14 @@ cd /vpn-certs
 
 ipsec pki --gen --type rsa --size 4096 --outform pem > server-root-key.pem
 chmod 600 server-root-key.pem
-ipsec pki --self --ca --lifetime 36500 --in server-root-key.pem --type rsa --dn "C=US, O=VPN Server, CN=VPN Server Root CA" --outform pem > server-root-ca.pem
+ipsec pki --self --ca --lifetime 36500 --in server-root-key.pem --type rsa --dn "C=US, O=Fodor IKEV2 VPN Server, CN=VPN Server Root CA" --outform pem > server-root-ca.pem
 ipsec pki --gen --type rsa --size 4096 --outform pem > vpn-server-key.pem
 
 ipsec pki --pub --in vpn-server-key.pem \
 --type rsa | ipsec pki --issue --lifetime 18250 \
 --cacert server-root-ca.pem \
 --cakey server-root-key.pem \
---dn "C=US, O=VPN Server, CN=server_name_or_ip" \
+--dn "C=US, O=Fodor IKEV2 VPN Server, CN=${DOMAIN}" \
 --san ${DOMAIN} \
 --flag serverAuth --flag ikeIntermediate \
 --outform pem > vpn-server-cert.pem
