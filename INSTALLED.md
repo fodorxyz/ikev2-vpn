@@ -1,20 +1,9 @@
-# Download certificate
-
-### Linux/Mac
-* `scp root@{{domain}}:/vpn-certs/server-root-ca.pem ./`
-
-### Windows
-* Use WinSCP or similar to download `/vpn-certs/server-root-ca.pem`
-
-# Add more users
+# How to ddd more users
 
 * `ssh root@{{domain}}`
 * `/var/fodorxyz/ikev2-vpn/adduser username password`
 
 # How to connect
-
-Follow the instructions here:
-https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ikev2-vpn-server-with-strongswan-on-ubuntu-16-04#connecting-from-windows
 
 
 # Setup on Mac
@@ -22,6 +11,9 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ikev2-vpn-serv
 The easiest way to set this up on Mac is to download, then open, the mobile config profile: https://cloud.ashleyhindle.com/ikev2-vpn/
 
 Then go to `System Preferences` -> `Network` -> and click the `Fodor IKEv2` connection and press `Connect`
+
+## Turning off connect on demand
+Go to `System Preferences` -> `Network` -> and click the `Fodor IKEv2` connection and untick 'Conncet on demand' and press `Apply`
 
 # Setup on iOS
 
