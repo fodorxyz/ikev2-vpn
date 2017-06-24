@@ -9,38 +9,14 @@ export VPNIPPOOL="10.20.30.0/24"
 apt-get update # This has already been done by Fodor, but it's not liking it for some reason
 apt-get -y install strongswan strongswan-plugin-openssl strongswan-plugin-eap-mschapv2 moreutils iptables-persistent unattended-upgrades
 
-# VPN Certificate
-# https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ikev2-vpn-server-with-strongswan-on-ubuntu-16-04
-mkdir /vpn-certs
-cd /vpn-certs
-
-ipsec pki --gen --type rsa --size 4096 --outform pem > server-root-key.pem
-chmod 600 server-root-key.pem
-ipsec pki --self --ca --lifetime 36500 --in server-root-key.pem --type rsa --dn "C=US, O=Fodor IKEV2 VPN Server, CN=VPN Server Root CA" --outform pem > server-root-ca.pem
-ipsec pki --gen --type rsa --size 4096 --outform pem > vpn-server-key.pem
-
-ipsec pki --pub --in vpn-server-key.pem \
---type rsa | ipsec pki --issue --lifetime 18250 \
---cacert server-root-ca.pem \
---cakey server-root-key.pem \
---dn "C=US, O=Fodor IKEV2 VPN Server, CN=${DOMAIN}" \
---san ${DOMAIN} \
---flag serverAuth --flag ikeIntermediate \
---outform pem > vpn-server-cert.pem
-
-cp ./vpn-server-cert.pem /etc/ipsec.d/certs/vpn-server-cert.pem
-cp ./vpn-server-key.pem /etc/ipsec.d/private/vpn-server-key.pem
-
-chown root /etc/ipsec.d/private/vpn-server-key.pem
-chgrp root /etc/ipsec.d/private/vpn-server-key.pem
-chmod 600 /etc/ipsec.d/private/vpn-server-key.pem
-
 
 # StrongSwan
 rm /etc/strongswan.conf
 cp "${INSTALLPATH}/configs/strongswan.conf" /etc/strongswan.conf
 
 # IPSec - has replacements so can't symlink it
+# charondebug line means it doesn't log a thing
+
 rm /etc/ipsec.conf
 cat > /etc/ipsec.conf <<EOF
 config setup
@@ -101,7 +77,7 @@ sysctl -p
 # VPN Users & Passwords
 rm /etc/ipsec.secrets
 
-echo "${DOMAIN} : RSA \"/etc/ipsec.d/private/vpn-server-key.pem\"" > /etc/ipsec.secrets
+echo "${DOMAIN} : PSK \"${VPNSECRET}\"" > /etc/ipsec.secrets
 /usr/bin/env bash ${INSTALLPATH}/bin/adduser "${VPNUSERNAME}" "${VPNPASSWORD}"
 
 # Disable apparmor for charon
