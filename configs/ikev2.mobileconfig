@@ -35,8 +35,6 @@
                 <string>{{DOMAIN}}</string>
                 <key>RemoteIdentifier</key>
                 <string>{{DOMAIN}}</string>
-                <key>LocalIdentifier</key>
-                <string>{{VPNUSERNAME}}</string>
                 <key>AuthenticationMethod</key>
                 <string>SharedSecret</string>
                 <key>SharedSecret</key>
