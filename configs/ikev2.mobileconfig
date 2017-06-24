@@ -15,7 +15,7 @@
     <key>PayloadVersion</key>
     <integer>1</integer>
     <key>PayloadRemovalDisallowed</key>
-	<false/>
+    <false/>
     <key>PayloadContent</key>
     <array>
         <dict>
@@ -55,13 +55,6 @@
                 <string>{{VPNUSERNAME}}</string>
                 <key>AuthPassword</key>
                 <string>{{VPNPASSWORD}}</string>
-		<key>UseConfigurationAttributeInternalIPSubnet</key>
-                <integer>0</integer>
-		 <key>IPv4</key>
-		    <dict>
-			<key>OverridePrimary</key>
-			<integer>1</integer>
-		    </dict>
                 <key>OnDemandEnabled</key>
                 <integer>1</integer>
                 <key>OnDemandRules</key>
