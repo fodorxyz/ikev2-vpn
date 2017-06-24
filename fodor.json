@@ -3,6 +3,7 @@
   "installpath": "/var/fodorxyz/ikev2-vpn/",
   "provisioner": "provisioning/start",
   "text": {
+    "complete": "You'll need to download the certificate and VPN profile config file now :)"
   },
   "links": [
     {
