@@ -52,7 +52,6 @@ conn IKEV2
   rightauth=eap-mschapv2
   eap_identity=%identity
   rightdns=8.8.8.8,8.8.4.4
-  rightsubnet=${VPNIPPOOL}
   rightsourceip=${VPNIPPOOL}
   rightsendcert=never
 EOF
