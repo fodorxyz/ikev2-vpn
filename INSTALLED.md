@@ -1,8 +1,3 @@
-# How to ddd more users
-
-* `ssh root@{{domain}}`
-* `/var/fodorxyz/ikev2-vpn/adduser username password`
-
 # How to connect
 
 
@@ -28,3 +23,9 @@ After it's installed go to `Settings` -> `General` -> `VPN` then choose `Fodor I
 # Setup on Android
 
 [Use this app](https://play.google.com/store/apps/details?id=org.strongswan.android&hl=en)
+
+
+# How to add more users
+
+* `ssh root@{{domain}}`
+* `/var/fodorxyz/ikev2-vpn/adduser username password`
