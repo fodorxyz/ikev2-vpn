@@ -39,12 +39,8 @@
                 <string>{{DOMAIN}}</string>
                 <key>AuthenticationMethod</key>
                 <string>SharedSecret</string>
-                <key>DeadPeerDetectionRate</key>
-                <string>Medium</string>
                 <key>DisableMOBIKE</key>
                 <integer>0</integer>
-                <key>DisableRedirect</key>
-                <integer>1</integer>
                 <key>EnableCertificateRevocationCheck</key>
                 <integer>0</integer>
                 <key>EnablePFS</key>
