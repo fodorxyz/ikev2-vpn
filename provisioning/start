@@ -77,7 +77,7 @@ sysctl -p
 # VPN Users & Passwords
 rm /etc/ipsec.secrets
 
-echo "${DOMAIN} : PSK \"${VPNSECRET}\"" > /etc/ipsec.secrets
+echo "@${DOMAIN} : PSK \"${VPNSECRET}\"" > /etc/ipsec.secrets
 /usr/bin/env bash ${INSTALLPATH}/bin/adduser "${VPNUSERNAME}" "${VPNPASSWORD}"
 
 # Disable apparmor for charon
