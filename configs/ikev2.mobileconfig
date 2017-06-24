@@ -3,7 +3,7 @@
 <dict>
     <!-- Set the name to whatever you like, it is used in the profile list on the device -->
     <key>PayloadDisplayName</key>
-    <string>Fodor IKEv2</string>
+    <string>{{DOMAIN}} IKEv2 VPN</string>
     <!-- This is a reverse-DNS style unique identifier used to detect duplicate profiles -->
     <key>PayloadIdentifier</key>
     <string>fodor.vpn{{VPNUSERNAME}}</string>
@@ -14,6 +14,8 @@
     <string>Configuration</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
+    <key>PayloadRemovalDisallowed</key>
+	<false/>
     <key>PayloadContent</key>
     <array>
         <dict>
