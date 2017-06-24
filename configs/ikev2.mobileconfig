@@ -37,6 +37,8 @@
                 <string>{{DOMAIN}}</string>
                 <key>RemoteIdentifier</key>
                 <string>{{DOMAIN}}</string>
+                <key>LocalIdentifier</key>
+                <string></string>
                 <key>AuthenticationMethod</key>
                 <string>SharedSecret</string>
                 <key>DisableMOBIKE</key>
@@ -47,6 +49,8 @@
                 <true/>
                 <key>SharedSecret</key>
                 <string>{{VPNSECRET}}</string>
+                <key>ExtendedAuthEnabled</key>
+                <integer>1</integer>
                 <key>AuthName</key>
                 <string>{{VPNUSERNAME}}</string>
                 <key>AuthPassword</key>
