@@ -29,12 +29,13 @@ $vpnUsername = (!empty($_GET['vpnUsername'])) ? $_GET['vpnUsername'] : '';
 $provided = array_keys($_GET);
 if (!empty(array_diff($requiredGet, $provided))) {
     echo <<<FORM
+    <html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body>
     <form action="" method="GET">
     <label>Domain</label><br />
     <input name='domain' value='{$domain}'><br />
     <label>VPN Username</label><br />
     <input name='vpnUsername' value=''><br />
-    <input type="submit"/>
+    <input type="submit"/></body></html>
 FORM;
     exit;
 }
@@ -42,6 +43,7 @@ FORM;
 $provided = array_keys($_POST);
 if (!empty(array_diff($requiredPost, $provided))) {
     echo <<<FORM
+        <html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body>
     <p>This server has access logs turned off and this page does no logging of its own</p>
     <p><a href="?domain={$domain}&vpnUsername={$vpnUsername}&vs">View Source</a></p>
 <form action="?domain={$domain}&vpnUsername={$vpnUsername}" method="POST">
@@ -55,7 +57,7 @@ if (!empty(array_diff($requiredPost, $provided))) {
     <input name='vpnPassword' type='password' value=''><br />
     
     <input type='submit'>
-</form>
+</form></body></html>
 FORM;
     exit;
 }
