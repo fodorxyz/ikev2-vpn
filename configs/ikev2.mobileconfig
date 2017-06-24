@@ -39,14 +39,51 @@
                 <string>{{DOMAIN}}</string>
                 <key>AuthenticationMethod</key>
                 <string>SharedSecret</string>
+		<key>ChildSecurityAssociationParameters</key>
+                <dict>
+                    <key>DiffieHellmanGroup</key>
+                    <integer>19</integer>
+                    <key>EncryptionAlgorithm</key>
+                    <string>AES-128-GCM</string>
+                    <key>IntegrityAlgorithm</key>
+                    <string>SHA2-512</string>
+                    <key>LifeTimeInMinutes</key>
+                    <integer>20</integer>
+                </dict>
+                <key>DeadPeerDetectionRate</key>
+                <string>Medium</string>
+                <key>DisableMOBIKE</key>
+                <integer>0</integer>
+                <key>DisableRedirect</key>
+                <integer>1</integer>
+                <key>EnableCertificateRevocationCheck</key>
+                <integer>0</integer>
+                <key>EnablePFS</key>
+                <true/>
+                <key>IKESecurityAssociationParameters</key>
+                <dict>
+                    <key>DiffieHellmanGroup</key>
+                    <integer>19</integer>
+                    <key>EncryptionAlgorithm</key>
+                    <string>AES-128-GCM</string>
+                    <key>IntegrityAlgorithm</key>
+                    <string>SHA2-512</string>
+                    <key>LifeTimeInMinutes</key>
+                    <integer>20</integer>
+                </dict>
                 <key>SharedSecret</key>
                 <string>{{VPNSECRET}}</string>
                 <key>AuthName</key>
                 <string>{{VPNUSERNAME}}</string>
                 <key>AuthPassword</key>
                 <string>{{VPNPASSWORD}}</string>
-                <key>ExtendedAuthEnabled</key>
-                <true/>
+		<key>UseConfigurationAttributeInternalIPSubnet</key>
+                <integer>0</integer>
+		 <key>IPv4</key>
+		    <dict>
+			<key>OverridePrimary</key>
+			<integer>1</integer>
+		    </dict>
                 <key>OnDemandEnabled</key>
                 <integer>1</integer>
                 <key>OnDemandRules</key>
