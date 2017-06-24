@@ -28,6 +28,6 @@ After it's installed go to `Settings` -> `General` -> `VPN` then choose `Fodor I
 # How to add more users
 
 * `ssh root@{{domain}}`
-* `/var/fodorxyz/ikev2-vpn/adduser username password`
+* `/var/fodorxyz/ikev2-vpn/bin/adduser username password`
 
 Then if you need to create a profile for this for use on iOS/Mac, go here: https://cloud.ashleyhindle.com/ikev2-vpn/
