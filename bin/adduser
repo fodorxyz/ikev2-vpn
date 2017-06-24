@@ -6,6 +6,6 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-echo "${1} %any : EAP \""${2}"\"" >> /etc/ipsec.secrets
+echo "${1} %any% : EAP \""${2}"\"" >> /etc/ipsec.secrets
 ipsec rereadsecrets
 echo "Added ${1} to VPN"
