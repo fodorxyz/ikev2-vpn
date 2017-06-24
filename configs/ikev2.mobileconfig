@@ -6,7 +6,7 @@
     <string>Fodor IKEv2</string>
     <!-- This is a reverse-DNS style unique identifier used to detect duplicate profiles -->
     <key>PayloadIdentifier</key>
-    <string>fodor.vpn1</string>
+    <string>fodor.vpn{{VPNUSERNAME}}</string>
     <!-- A globally unique identifier, use uuidgen on Linux/Mac OS X to generate it -->
     <key>PayloadUUID</key>
     <string>{{UUID}}</string>
@@ -18,7 +18,7 @@
     <array>
         <dict>
             <key>PayloadIdentifier</key>
-            <string>fodor.vpn1.conf1</string>
+            <string>fodor.vpn{{VPNUSERNAME}}.conf1</string>
             <key>PayloadUUID</key>
             <string>{{UUID}}</string>
             <key>PayloadType</key>
