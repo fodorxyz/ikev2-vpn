@@ -38,9 +38,9 @@
                   <key>EncryptionAlgorithm</key>
                   <string>AES-256-GCM</string>
                   <key>IntegrityAlgorithm</key>
-                  <string>SHA2-384</string>
+                  <string>SHA2-256</string>
                   <key>DiffieHellmanGroup</key>
-                  <integer>0</integer>
+                  <integer>21</integer>
                   <key>LifeTimeInMinutes</key>
                   <integer>1440</integer>
                 </dict>
@@ -53,29 +53,37 @@
                 <string></string>
                 <key>AuthenticationMethod</key>
                 <string>SharedSecret</string>
+                <key>DeadPeerDetectionRate</key>
+                <string>Medium</string>
                 <key>DisableMOBIKE</key>
+                <integer>0</integer>
+                <key>DisableRedirect</key>
                 <integer>0</integer>
                 <key>EnableCertificateRevocationCheck</key>
                 <integer>0</integer>
-                <key>EnablePFS</key>
-                <true/>
                 <key>SharedSecret</key>
                 <string>{{VPNSECRET}}</string>
+                <key>EnablePFS</key>
+                <integer>0</integer>
                 <key>ExtendedAuthEnabled</key>
+                <true/>
+                <key>IKESecurityAssociationParameters</key>
+                <dict>
+                        <key>DiffieHellmanGroup</key>
+                        <integer>21</integer>
+                        <key>EncryptionAlgorithm</key>
+                        <string>AES-256-GCM</string>
+                        <key>IntegrityAlgorithm</key>
+                        <string>SHA2-256</string>
+                        <key>LifeTimeInMinutes</key>
+                        <integer>1440</integer>
+                </dict>
+                <key>NATKeepAliveInterval</key>
+                <integer>110</integer>
+                <key>NATKeepAliveOffloadEnable</key>
                 <integer>1</integer>
                 <key>AuthName</key>
                 <string>{{VPNUSERNAME}}</string>
-                <key>IKESecurityAssociationParameters</key>
-                <dict>
-                  <key>EncryptionAlgorithm</key>
-                  <string>AES-256-GCM</string>
-                  <key>IntegrityAlgorithm</key>
-                  <string>SHA2-384</string>
-                  <key>DiffieHellmanGroup</key>
-                  <integer>0</integer>
-                  <key>LifeTimeInMinutes</key>
-                  <integer>1440</integer>
-                </dict>
                 <key>OnDemandEnabled</key>
                 <integer>1</integer>
                 <key>OnDemandRules</key>
