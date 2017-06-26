@@ -33,6 +33,18 @@
             <string>IKEv2</string>
             <key>IKEv2</key>
             <dict>
+                <key>ChildSecurityAssociationParameters</key>
+                <dict>
+                  <key>EncryptionAlgorithm</key>
+                  <string>AES-256-GCM</string>
+                  <key>IntegrityAlgorithm</key>
+                  <string>SHA2-256</string>
+                  <key>DiffieHellmanGroup</key>
+                  <integer>21</integer>
+                  <key>LifeTimeInMinutes</key>
+                  <integer>1440</integer>
+                </dict>
+        
                 <key>RemoteAddress</key>
                 <string>{{DOMAIN}}</string>
                 <key>RemoteIdentifier</key>
@@ -53,6 +65,17 @@
                 <integer>1</integer>
                 <key>AuthName</key>
                 <string>{{VPNUSERNAME}}</string>
+                <key>IKESecurityAssociationParameters</key>
+                <dict>
+                  <key>EncryptionAlgorithm</key>
+                  <string>AES-256-GCM</string>
+                  <key>IntegrityAlgorithm</key>
+                  <string>SHA2-256</string>
+                  <key>DiffieHellmanGroup</key>
+                  <integer>21</integer>
+                  <key>LifeTimeInMinutes</key>
+                  <integer>1440</integer>
+                </dict>
                 <key>OnDemandEnabled</key>
                 <integer>1</integer>
                 <key>OnDemandRules</key>
