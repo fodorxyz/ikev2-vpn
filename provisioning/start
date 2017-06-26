@@ -37,8 +37,8 @@ conn IKEV2
   keyexchange=ikev2
   fragmentation=yes
   forceencaps=yes
-  ike=aes256gcm16-sha384-ecp521!
-  esp=aes256gcm16-sha384!
+  ike=aes256gcm16-prfsha256-ecp521!
+  esp=aes256gcm16-ecp521!
   dpdaction=clear
   dpddelay=200s
   rekey=no
